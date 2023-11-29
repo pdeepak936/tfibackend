@@ -9,6 +9,7 @@ exports.register = async (req, res) => {
     const registrationsCount = await VolunteerModel.countDocuments();
     if (registrationsCount === 20) {
       const classrooms = await ClassroomModel.find();
+      const registrations = await VolunteerModel.find();
       const allocations = allocateVolunteers(classrooms, registrations);
       console.log("Allocations:", allocations);
     }
@@ -28,6 +29,19 @@ exports.getRegistrations = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
+
+exports.allocation = async (req, res) => {
+  try {
+    const classrooms = await ClassroomModel.find();
+      const registrations = await VolunteerModel.find();
+      const allocations = allocateVolunteers(classrooms, registrations);
+      console.log("Allocations:", allocations);
+      res.status(201).json({ message: 'Volunteer allocated successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+}
 
 async function allocateVolunteers(classrooms, registrations) {
   const allocations = [];
