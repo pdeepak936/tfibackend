@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "npm install && npm run build-server",
-    "build-server": "echo 'Building server.....' && npm run compile-server",
-    "compile-server": "echo 'compiling server.....",
-    "class": "node uploadDataToMongo.js"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "build": "npm install && npm run build-server",
+  "build-server": "echo 'Building server.....' && npm run compile-server",
+  "compile-server": "echo 'compiling server....'",
+  "start": "nodemon server.js",
+  "class": "node uploadDataToMongo.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
