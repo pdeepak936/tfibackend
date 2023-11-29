@@ -2,11 +2,12 @@
   "name": "teachforindia",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "build": "npm install && npm run build-server",
-    "build-server": "echo 'Building server.....' && npm run start",
     "start": "nodemon server.js",
+    "build": "npm install && npm run build-server",
+    "build-server": "echo 'Building server.....' && npm run compile-server",
+    "compile-server": "echo 'compiling server.....",
     "class": "node uploadDataToMongo.js"
   },
   "keywords": [],
