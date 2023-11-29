@@ -4,6 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+     "build": "npm install && npm run build-server",
+    "build-server": "echo 'Building server.....' && npm run compile-server",
     "start": "nodemon server.js",
     "class": "node uploadDataToMongo.js"
   },
